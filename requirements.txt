@@ -2,3 +2,5 @@ openai
 Requests
 streamlit
 tenacity
+tiktoken
+pymongo
