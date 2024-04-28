@@ -4,3 +4,4 @@ streamlit
 tenacity
 tiktoken
 pymongo
+cryptography
