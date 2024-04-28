@@ -9,7 +9,8 @@ st.set_page_config(page_title="easyStorage: Low-cost storage near you!",  page_i
 left_co, cent_co,last_co = st.columns(3)
 with left_co:
     st.image('eslogo.png')
-st.write("# Low-cost storage near you!")
+# st.write("# Low-cost storage near you!")
+st.markdown('# <span style="font-family: Helvetica;">Low-cost storage near you!</span>', unsafe_allow_html=True)
 
 openai_api_key = ut.get_key()
 
