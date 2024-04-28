@@ -6,8 +6,10 @@ import base64
 folder = pathlib.Path(__file__).parent.resolve()
 
 st.set_page_config(page_title="easyStorage: Low-cost storage near you!",  page_icon="🚚",)
-st.image('eslogo.png', use_column_width=True)
-st.write("# 🚚 Low-cost storage near you!🚀")
+left_co, cent_co,last_co = st.columns(3)
+with left_co:
+    st.image('eslogo.png')
+st.write("# Low-cost storage near you!")
 
 openai_api_key = ut.get_key()
 
