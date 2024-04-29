@@ -5,7 +5,7 @@ import base64
 
 folder = pathlib.Path(__file__).parent.resolve()
 
-st.set_page_config(page_title="easyStorage: Low-cost storage near you!",  page_icon="🚚",)
+st.set_page_config(page_title="easyStorage:Low-cost storage near you!",  page_icon="🚚",)
 left_co, cent_co,last_co = st.columns(3)
 with left_co:
     st.image('eslogo.png')
