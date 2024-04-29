@@ -102,3 +102,31 @@ def get_key():
     
     except Exception as e:
         print(e)
+
+def get_prompt():
+    uri = st.secrets["MONGO_URI"]
+    
+    @st.cache_resource
+    def init_connection():
+        return pymongo.MongoClient(uri)
+
+    client = init_connection()
+    content = "default"
+
+    try:
+        client.admin.command('ping')
+        print("Pinged your deployment. You successfully connected to MongoDB!")
+        mydb = client.easystorage
+        myco = mydb.esprompt
+        query = {"item" : "prompt"}
+        result = myco.find_one(query)
+
+        # Check if the document was found
+        if result:
+            content = result.get("content", None)
+        else:
+            print("Document not found.")
+        return content
+    
+    except Exception as e:
+        print(e)
